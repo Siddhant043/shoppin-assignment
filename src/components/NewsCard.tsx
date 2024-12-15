@@ -34,10 +34,9 @@ const NewsCard = ({
 }: NewsCardProps) => {
   const [like, setLike] = useState(false);
 
-  // update index validity
   return (
     <React.Fragment>
-      {index === 400 && <WidgetsComponent />}
+      {index === 0 && <WidgetsComponent />}
       <TouchableOpacity
         onPress={() => {}}
         activeOpacity={1}

@@ -12,14 +12,12 @@ const SearchInputComponent = ({ value, onChangeText, onSubmit }) => {
 
   const { photo } = getUserData();
 
-  // Function to clear the search input
   const clearSearchText = () => {
-    onChangeText(""); // Clear the search input
+    onChangeText("");
   };
 
   return (
     <View className="flex flex-row items-center py-2 px-4 w-full h-14 bg-[#2f3133] mt-4 rounded-full">
-      {/* Left Icon */}
       <Image
         source={{
           uri: googleIconIcon,
@@ -29,7 +27,6 @@ const SearchInputComponent = ({ value, onChangeText, onSubmit }) => {
         className="rounded-full"
       />
 
-      {/* Search Input */}
       <TextInput
         placeholder="Search here"
         value={value}
@@ -37,10 +34,9 @@ const SearchInputComponent = ({ value, onChangeText, onSubmit }) => {
         className={`text-gray-400 text-2xl ml-4 flex-1`}
         style={{ color: "white" }}
         returnKeyType="search"
-        onSubmitEditing={onSubmit} // Trigger search when "Enter" or "Search" key is pressed
+        onSubmitEditing={onSubmit}
       />
 
-      {/* Clear Button */}
       {value ? (
         <Pressable onPress={clearSearchText}>
           <View className="flex w-10 border-gray-400 border-r mr-4 justify-center items-center">
@@ -49,7 +45,6 @@ const SearchInputComponent = ({ value, onChangeText, onSubmit }) => {
         </Pressable>
       ) : null}
 
-      {/* User Profile or Sign-In Button */}
       {photo ? (
         <Image
           source={{
